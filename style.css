@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Comfortaa", sans-serif;
+}
+
+h1 {
+    font-family: "Lobster Two", sans-serif;
+}
+
+header {
+    background-color: #303030;
+    color: rgb(174, 160, 142);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 2% 5%;
+    border-bottom: goldenrod solid 2px;
+}
+
+    header ul li{
+        list-style: none;
+    }
+
+    header a {
+        text-decoration: none;
+        color: bisque;
+    }
+
+    header h3 {
+        max-width: 400px;
+    }
+
+select {
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
