@@ -6,26 +6,72 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zeyada&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
     <title>Codinome Flower</title>
 </head>
-<body>
+<body onload="onLoad()">
     <header>
         <div>
-            <h1 id=>Hua Yi Shan Xin Zhi Yue</h1>
-            <p id="description">Jogo criado pela Nuverse</p><br>
-            <h3 id="subTitle">Guia Básico feito por um fã para fãs. Tradução feita via Google Tradutor</h3>
+            <h1 class="shdw">Hua Yi Shan Xin Zhi Yue</h1>
+            <p id="subTitle" class="shdw">Jogo criado pela Nuverse</p><br>
+            <h3 id="desc" class="shdw">Guia Básico feito por um fã para fãs. Tradução feita via Google Tradutor</h3>
             
         </div>
         <div class="language">
-            <select name="" id="">
-                <option value="pt">Português</option>
-                <option value="en">English</option>
+            <select name="listlanguages" onchange="langSelectChange(this)">
             </select>
         </div>
     </header>
-    <script src="langScript.js"></script>
+	   <script type="text/javascript">
+        var multilang;
+
+        function onLoad() {
+
+            if (!location.hash || location.hash == "#pt") {
+                multilang = new MultiLang('languages.json', 'pt', this.initList);
+                window.location.assign("#pt");
+            } else {
+                multilang = new MultiLang('languages.json', 'en', this.initList);
+                window.location.assign("#en");
+            }
+
+            }
+
+        function langSelectChange(sel) {
+            multilang.setLanguage(sel.value);
+            //Location assigned to Current Lang
+            var newpath = "#"+ sel.value;
+            window.location.assign(newpath)
+            
+            refreshLabels();
+        }
+
+        function initList() {
+            var list = document.getElementsByName("listlanguages")[0];
+            list.options.length = 0;
+            for (var key in multilang.phrases) {
+
+                var lang = document.createElement("option");
+                lang.value = key;
+                lang.innerHTML = multilang.phrases[key]['langdesc'];
+                list.appendChild(lang);
+            }
+            refreshLabels();
+        }
+
+        function refreshLabels() {
+            var allnodes = document.body.getElementsByTagName("*");
+
+            for (var i = 0, max = allnodes.length; i < max; i++) {
+                var idname = allnodes[i].id;
+                if (idname != '') {
+                    allnodes[i].textContent = multilang.get(idname);
+                };
+            };
+        }
+    </script>
+    <script type="text/javascript" src="multilang.js"></script>
 </body>
 </html>

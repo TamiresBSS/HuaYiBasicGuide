@@ -1,39 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zeyada&display=swap");
+
+:root {
+    --corPreto: #303030;
+    --corOuro: #faa63e;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Comfortaa", sans-serif;
 }
 
+body {
+    background-color: #303030;
+}
+
 h1 {
     font-family: "Lobster Two", sans-serif;
 }
-
+/* Header and Selector */
 header {
-    background-color: #303030;
-    color: rgb(174, 160, 142);
+    position: relative;
+    height: 100px;
     display: flex;
     justify-content:space-between;
     align-items: center;
     padding: 2% 5%;
-    border-bottom: goldenrod solid 2px;
+    border-bottom: #75582b solid 1px;
 }
-
-    header ul li{
-        list-style: none;
+    header::before {
+        background-image: url(img/wide-login.jpg);
+        content: "";
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.75;
+        z-index: -1;
     }
 
-    header a {
-        text-decoration: none;
-        color: bisque;
-    }
-
-    header h3 {
+    #desc {
         max-width: 400px;
     }
 
-select {
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 700;
-}
+    select {
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .shdw {
+        /* Light Shadow */
+        /* text-shadow: 1px 1px 2px rgb(235, 208, 161), 0 0 1em rgb(241, 240, 234), 0 0 0.2em rgb(246, 201, 95); */
+        /* Dark Shadow */
+        text-shadow: 1px 1px 2px rgb(49, 39, 23), 0 0 1em rgb(249, 199, 112), 0 0 0.2em rgb(68, 49, 5);
+    }
