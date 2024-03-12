@@ -3,6 +3,9 @@
 :root {
     --corPreto: #303030;
     --corOuro: #faa63e;
+    --bordaBtt: #75582b solid 1px;
+    --lightShd: 1px 1px 2px rgb(235, 208, 161), 0 0 1em rgb(241, 240, 234), 0 0 0.2em rgb(246, 201, 95);
+    --darkShd: 1px 1px 2px rgb(49, 39, 23), 0 0 1em rgb(249, 199, 112), 0 0 0.2em rgb(68, 49, 5);
 }
 
 * {
@@ -26,7 +29,7 @@ header {
     justify-content:space-between;
     align-items: center;
     padding: 2% 5%;
-    border-bottom: #75582b solid 1px;
+    border-bottom: var(--bordaBtt);
 }
     header::before {
         background-image: url(img/wide-login.jpg);
@@ -55,8 +58,27 @@ header {
     }
 
     .shdw {
-        /* Light Shadow */
-        /* text-shadow: 1px 1px 2px rgb(235, 208, 161), 0 0 1em rgb(241, 240, 234), 0 0 0.2em rgb(246, 201, 95); */
-        /* Dark Shadow */
-        text-shadow: 1px 1px 2px rgb(49, 39, 23), 0 0 1em rgb(249, 199, 112), 0 0 0.2em rgb(68, 49, 5);
+        text-shadow: var(--darkShd);
+    }
+nav {
+    border-bottom: var(--bordaBtt);
+}
+
+nav ul { 
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+    nav ul li {
+        padding: 15px;
+    }
+
+    nav ul li a {
+        color: var(--corOuro);
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        color: white;
+        text-shadow: var(--darkShd);
     }
