@@ -1,20 +1,19 @@
+export const allLanguages =  
 {
-	"pt": {
-		"langdesc": "Portugues",
-        "title": "Codinome Flower",
-        "desc": "Guia Básico feito por um fã para fãs. Tradução feita via Google Tradutor",
+	pt: {
+        "title" : "Codinome Flower",
         "subTitle": "Jogo criado pela Nuverse",
+        "desc": "Guia Básico feito por um fã para fãs. Tradução feita via Google Tradutor",
         "menu1": "Página Inicial",
         "menu2": "Interface",
         "menu3": "Equipamentos",
         "menu4": "Chefes e PVE",
         "prox": ""
 	},
-	"en": {
-		"langdesc": "English",
-        "title": "Codename Flower",
-        "desc": "Basic Guide made by a fan for fans. Translation done by Google Translator",
+	en: {
+        "title" : "Codename Flower",
         "subTitle": "Game created by Nuverse",
+        "desc": "Basic Guide made by a fan for fans. Translation done by Google Translator",
         "menu1": "Home",
         "menu2": "Interface",
         "menu3": "Equipments",
