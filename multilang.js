@@ -19,14 +19,12 @@ function refreshAll () {
     let allnodes = document.body.getElementsByTagName("*");
     //Title
     document.title = allLanguages[idiom].title;
-    //All others elements with IDs
+    //Check the whole html collection + skip those without ID
     for (let i = 0, max = allnodes.length; i < max; i++) {
         let idname = allnodes[i].id;
-        //Check the whole html collection
         if (idname != '') {
             //Check if the ID is present inside the Language List
             if (allLanguages[idiom].hasOwnProperty(idname)) {
-                console.log(idname);
                 allnodes[i].textContent = allLanguages[idiom][idname];
             };
         };
