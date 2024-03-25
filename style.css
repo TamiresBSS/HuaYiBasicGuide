@@ -3,15 +3,19 @@
 :root {
     --corPreto: #303030;
     --corOuro: #faa63e;
+    --corLaranja: rgb(239, 144, 96);
     --bordaBtt: #75582b solid 1px;
     --lightShd: 1px 1px 2px rgb(235, 208, 161), 0 0 1em rgb(241, 240, 234), 0 0 0.2em rgb(246, 201, 95);
     --darkShd: 1px 1px 2px rgb(49, 39, 23), 0 0 1em rgb(249, 199, 112), 0 0 0.2em rgb(68, 49, 5);
+    --comft: "Comfortaa", sans-serif;
+    --lobs: "Lobster Two", sans-serif;
+    --zeya: "Zeyada";
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--comft);
 }
 
 body {
@@ -19,7 +23,7 @@ body {
 }
 
 h1 {
-    font-family: "Lobster Two", sans-serif;
+    font-family: var(--lobs);
 }
 /* Header and Selector */
 header {
@@ -32,7 +36,7 @@ header {
     border-bottom: var(--bordaBtt);
 }
     header::before {
-        background-image: url(img/wide-login.jpg);
+        background-image: url(img/wide-golden.jpg);
         content: "";
         background-size: cover;
         background-repeat: no-repeat;
@@ -81,4 +85,85 @@ nav ul {
     nav ul li a:hover {
         color: white;
         text-shadow: var(--darkShd);
+    }
+/* Main Body - Section 0 */
+#main {
+    margin: 0 auto;
+    padding: 5%;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+    #main h2 {
+        color: var(--corLaranja);
+        text-shadow: var(--darkShd);
+        padding: 5px;
+        border-bottom: var(--bordaBtt);
+    }
+
+    .mainWarn {
+        text-align: center;
+        padding: 50px;
+        border: var(--bordaBtt);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+/* Section #1 Interface */
+#interface {
+    display: grid;
+    grid-template-columns: 18% auto 18%;
+    display: none;
+    padding: 15px 5% 15px 5%;
+    font-size: 14px;
+    color: var(--corOuro);
+    align-items: center;
+}
+
+    #interface #secRight p, #interface #secLeft p {
+        font-family: var(--lobs);
+        font-weight: 400;
+        font-size: 20px;
+        padding: 5%;
+        border: 2px var(--corLaranja) outset;
+        background-color: rgba(0, 0, 0, 0.236);
+        margin-top: 12%;
+    }
+    #interface #secRight p:hover, #interface #secLeft p:hover {
+        box-shadow: var(--darkShd);
+        padding: 6%;
+        color: white;
+    }
+
+    /* #1 Interface > Left Side  */
+        #secLeft { 
+            text-align: right;
+            padding-right: 10%;
+        }
+            #interface #secLeft p {
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 45px;
+                border-top-right-radius: 45px;
+                }
+    /* #1 Interface > Right Side */
+        #secRight {
+            text-align: left;
+            padding-left: 10%;
+        }
+            #interface #secRight p {
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 45px;
+                border-top-left-radius: 45px;
+            }
+
+    /* IMG : Lobby Guide */
+    #interface img {
+        content: url("img/mainScreen.jpg");
+        border-top: 1px var(--corLaranja) solid;
+        border-bottom: 1px var(--corLaranja) solid;
+        border-left: 5px var(--corLaranja) solid;
+        border-right: 5px var(--corLaranja) solid;
+        max-width: 98%;
+        height: auto;
+        /* margin-top: 15px; */
     }
