@@ -2,6 +2,7 @@
 
 :root {
     --corPreto: #303030;
+    --corPretodk: #1d1d1d;
     --corOuro: #faa63e;
     --corLaranja: rgb(239, 144, 96);
     --bordaBtt: #75582b solid 1px;
@@ -19,6 +20,7 @@
 }
 
 body {
+    color: white;
     background-color: #303030;
 }
 
@@ -34,9 +36,10 @@ header {
     align-items: center;
     padding: 2% 5%;
     border-bottom: var(--bordaBtt);
+    text-shadow: 3px 1px 0 var(--corPretodk);
 }
     header::before {
-        background-image: url(img/wide-golden.jpg);
+        background-image: url(img/wide-houses.jpg);
         content: "";
         background-size: cover;
         background-repeat: no-repeat;
@@ -46,26 +49,61 @@ header {
         right: 0px;
         bottom: 0px;
         left: 0px;
-        opacity: 0.75;
+        opacity: 0.45;
         z-index: -1;
     }
 
     #desc {
+        font-weight: 400;
         max-width: 400px;
     }
 
-    select {
-        padding: 5px;
+    #languages {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        appearance: none;
+        background-color: var(--corPreto);
+        color: white;
+        /* width: 135px; */
+        padding: 5px 50px 5px 20px;
         border-radius: 10px;
         font-size: 15px;
         font-weight: 700;
+        /* custom arrow 'Minimal by Veiko, source: codepen.io' */
+        background-image:
+            linear-gradient(45deg, transparent 50%, white 50%),
+            linear-gradient(135deg, white 50%, transparent 50%),
+            linear-gradient(to right, #ccc, #ccc);
+        background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - 2.5em) 0.5em;
+        background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+        background-repeat: no-repeat;
+        background-position-y: 55%;
     }
 
+    #languages:focus {
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--corOuro) 50%),
+          linear-gradient(135deg, var(--corOuro) 50%, transparent 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        border-color: var(--corOuro);
+        outline: 0;
+      }
+
     .shdw {
-        text-shadow: var(--darkShd);
+        color: white;
+        text-shadow: var(--lightShd);
     }
+/* Main Nav Menu */
 nav {
     border-bottom: var(--bordaBtt);
+    background-color: var(--corPretodk);
 }
 
 nav ul { 
@@ -86,6 +124,7 @@ nav ul {
         color: white;
         text-shadow: var(--darkShd);
     }
+
 /* Main Body - Section 0 */
 #main {
     margin: 0 auto;
@@ -110,17 +149,20 @@ nav ul {
     }
 
 /* Section #1 Interface */
+.containerA {
+    display: none;
+}
+
 #interface {
     display: grid;
-    grid-template-columns: 18% auto 18%;
-    display: none;
+    grid-template-columns: 20% auto 20%;
     padding: 15px 5% 15px 5%;
     font-size: 14px;
-    color: var(--corOuro);
+    color: white;
     align-items: center;
 }
 
-    #interface #secRight p, #interface #secLeft p {
+    #interface .secRight p, #interface .secLeft p {
         font-family: var(--lobs);
         font-weight: 400;
         font-size: 20px;
@@ -129,28 +171,30 @@ nav ul {
         background-color: rgba(0, 0, 0, 0.236);
         margin-top: 12%;
     }
-    #interface #secRight p:hover, #interface #secLeft p:hover {
+    #interface .secRight p:hover, #interface .secLeft p:hover {
         box-shadow: var(--darkShd);
-        padding: 6%;
-        color: white;
+        color: var(--corOuro);
+    }
+    #interface .secRight p:focus {
+        color: red;
     }
 
     /* #1 Interface > Left Side  */
-        #secLeft { 
+        .secLeft { 
             text-align: right;
             padding-right: 10%;
         }
-            #interface #secLeft p {
+            #interface .secLeft p {
                 border-top-left-radius: 15px;
                 border-bottom-left-radius: 45px;
                 border-top-right-radius: 45px;
                 }
     /* #1 Interface > Right Side */
-        #secRight {
+        .secRight {
             text-align: left;
             padding-left: 10%;
         }
-            #interface #secRight p {
+            #interface .secRight p {
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 45px;
                 border-top-left-radius: 45px;
@@ -158,11 +202,11 @@ nav ul {
 
     /* IMG : Lobby Guide */
     #interface img {
-        content: url("img/mainScreen.jpg");
-        border-top: 1px var(--corLaranja) solid;
-        border-bottom: 1px var(--corLaranja) solid;
-        border-left: 5px var(--corLaranja) solid;
-        border-right: 5px var(--corLaranja) solid;
+        /* content: url("img/mainScreen.jpg"); */
+        border-top: 1px var(--corLaranja) outset;
+        border-bottom: 1px var(--corLaranja) outset;
+        border-left: 5px var(--corLaranja) outset;
+        border-right: 5px var(--corLaranja) outset;
         max-width: 98%;
         height: auto;
         /* margin-top: 15px; */

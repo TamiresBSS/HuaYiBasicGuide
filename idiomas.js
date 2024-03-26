@@ -8,11 +8,11 @@ export const allLanguages =
         "menu2": "Interface",
         "menu3": "Equipamentos",
         "menu4": "Chefes e PVE",
-        "left1": "Perfil / Avatar 🏵️",
+        "left1": "Perfil 🏵️",
         "left2": "Vestuário 🏵️",
-        "left3": "Residência 🏵️",
+        "left3": "Casa Decor. 🏵️",
         "left4": "Correio 🏵️",
-        "left5": "Progresso 🏵️",
+        "left5": "Conquistas 🏵️",
         "left6": "Inventário 🏵️",
         "prox": ""
 	},
@@ -24,11 +24,11 @@ export const allLanguages =
         "menu2": "Interface",
         "menu3": "Equipments",
         "menu4": "Bosses and PVE",
-        "left1": "Profile / Avatar 🏵️",
+        "left1": "Profile🏵️",
         "left2": "Wardrobe 🏵️",
         "left3": "Home Decor 🏵️",
         "left4": "Mail 🏵️",
-        "left5": "Progress 🏵️",
+        "left5": "Achievements 🏵️",
         "left6": "Inventory 🏵️",
         "prox": ""
     }

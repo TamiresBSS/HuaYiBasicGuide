@@ -15,10 +15,9 @@
 <body>
     <header>
         <div>
-            <h1 class="shdw">Hua Yi Shan Xin Zhi Yue</h1>
-            <p id="subTitle" class="shdw">Jogo criado pela Nuverse</p><br>
-            <h3 id="desc" class="shdw">Guia Básico feito por um fã para fãs. Tradução feita via Google Tradutor</h3>
-            
+            <h1>Hua Yi Shan Xin Zhi Yue</h1>
+            <p id="subTitle">Jogo criado pela Nuverse</p><br>
+            <h3 id="desc">Guia Básico feito por um fã para fãs. Tradução feita via Google Tradutor</h3>
         </div>
         <div>
             <select id="languages">
@@ -36,8 +35,8 @@
         </ul>
     </nav>
     <!-- Alternating Content -->
-    <section id="main">
-        <div>
+    <section class="containerA">
+        <div id="main">
             <h2>Atenção!</h2>
             <br>
             <p class="mainWarn">Este guia foi elaborado com o objetivo de oferecer orientações de interface e fornecer breves dicas sobre o que fazer ou não no início do jogo.
@@ -46,40 +45,36 @@
             </p>
         </div>
     </section>
-    <section id="interface">
-        <div id="secLeft">
-                <p id="left1">Perfil / Avatar 🏵️</p>
+    <section class="containerB">
+        <div id="interface">
+            <div class="secLeft">
+                <p id="left1" onclick="imgRotation('wide-sunrise')">Perfil 🏵️</p>
                 <p id="left2">Vestuário 🏵️</p>
-                <p id="left3">Residência 🏵️</p>
+                <p id="left3">Casa Decor. 🏵️</p>
                 <p id="left4">Correio 🏵️</p>
-                <p id="left5">Progresso 🏵️</p>
+                <p id="left5">Conquistas 🏵️</p>
                 <p id="left6">Inventário 🏵️</p>
-        </div>
-        <img>
-        <div id="secRight">
+            </div>
+            <img id="swapImgs" src="img/mainScreen.jpg">
+            <div class="secRight">
                 <p>🏵️ Missões</p>
                 <p>🏵️ Loja</p>
                 <p>🏵️ Infos</p>
                 <p>🏵️ Aulas / Passe</p>
                 <p>🏵️ Eventos</p>
                 <p>🏵️ Interação</p>
+            </div>
         </div>
     </section>
+    <!-- Javascript -->
     <script type="module" src="multilang.js"></script>
 	<script>
+        var img = document.getElementById("swapImgs")
         
-        // function onload () {    
-        //     if (location.hash == "#en" || location.hash == "#pt") {
-        //     }
-        // }
-        
-            // languages.addEventListener('change', function () {
-            //     if (!location.hash || location.hash == "#pt") {
-            //         
-            //     } else {
-            //         window.location.assign("#en");
-            //     }
-            // });
+        function imgRotation(filename) {
+            let newSrc = "img/"+filename+".jpg";
+            img.setAttribute("src", newSrc);
+        }
     </script>
 </body>
 </html>
